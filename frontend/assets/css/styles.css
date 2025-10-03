@@ -1,0 +1,133 @@
+/* Base / backgrounds */
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  transition: background-image 0.5s ease-in-out;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Role backgrounds */
+body.login-page { background-image: url('../img/bg-login.jpg'); }
+body.admin-page { background-image: url('../img/bg-admin.jpg'); }
+body.manager-page { background-image: url('../img/bg-manager.jpg'); }
+body.driver-page { background-image: url('../img/bg-driver.jpg'); }
+body.user-page { background-image: url('../img/bg-user.jpg'); }
+
+/* Overlay for darkening background */
+.overlay {
+  background: rgba(0, 0, 0, 0.45);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 5;
+}
+
+/* Ensure auth / dashboard content float above overlay */
+.z-front { z-index: 10; position: relative; }
+
+/* Card styles */
+.auth-card {
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+}
+
+/* Input / Select / Textarea */
+input, select, textarea {
+  color: #111; /* dark text */
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
+
+select option {
+  color: #111;
+  background-color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #38a169; /* green outline on focus */
+}
+
+/* Button */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Dashboard container */
+#dashboard {
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  min-height: 80vh;
+  padding: 2rem;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+}
+
+table th, table td {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem;
+}
+
+table th {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Small tweaks */
+.auth-card input { outline: none; }
+.auth-card button { cursor: pointer; }
+
+a { text-decoration: none; }
+a:hover { opacity: 0.8; }
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  #dashboard { padding: 3rem; }
+}
+
+/* Map wrapper */
+#driverMapWrapper, #userMapWrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+#map-driver, #map-user {
+  height: 16rem;
+  width: 100%;
+}
+
+/* Approve / Assign sections */
+#pickupAssignArea {
+  margin-top: 0.5rem;
+}
+
+/* Alerts / highlights */
+.bin-needs-pickup {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* Smooth transitions for cards */
+.bg-white.bg-opacity-10, .bg-white.bg-opacity-20 {
+  transition: background 0.3s ease;
+}
